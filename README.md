@@ -1,0 +1,1 @@
+# Examples Golang with rabbitmq

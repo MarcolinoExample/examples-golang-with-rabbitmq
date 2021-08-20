@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  rabbit:
+    container_name: rabbit
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672" # admin port
+      - "5672:5672" # default port
+      - "1883:1883" # mqtt port
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+      - ./extras/rabbitmq/enabled_plugins.txt:/etc/rabbitmq/enabled_plugins
+      - ./extras/rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
